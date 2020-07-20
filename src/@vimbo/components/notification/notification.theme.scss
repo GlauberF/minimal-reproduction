@@ -1,0 +1,9 @@
+@mixin vimbo-notification-theme($theme) {
+    $foreground: map-get($theme, foreground);
+
+    vimbo-notification {
+        .vimbo-notification {
+            //box-shadow: $vimbo-box-shadow;
+        }
+    }
+}

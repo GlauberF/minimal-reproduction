@@ -1,0 +1,60 @@
+<div class="navbar-top" [ngClass]="vimboConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo">
+        <!--<img class="logo-icon" src="assets/images/logos/logo_m.png">-->
+        <picture>
+            <source class="logo-icon" srcset="assets/images/logos/logo_m.webp" type="image/webp">
+            <img class="logo-icon" src="assets/images/logos/logo_m.png">
+        </picture>
+        <span class="logo-text secondary-text">Vimbo</span>
+    </div>
+
+    <div class="buttons">
+
+        <button mat-icon-button class="toggle-sidebar-folded"
+                (click)="toggleSidebarFolded()" fxHide.lt-lg>
+            <!--<mat-icon class="secondary-text">menu</mat-icon>-->
+            <mat-icon class="s-20 secondary-text"
+                      svgIcon="{{folded ? 'vb-icon-menu-open' : 'vb-icon-menu-close'}}"
+                      matTooltip="{{folded ? ('Expandir menu' | translate) : ('Retrair menu' | translate)}}">
+            </mat-icon>
+        </button>
+
+        <button mat-icon-button class="toggle-sidebar-opened"
+                (click)="toggleSidebarOpened()" fxHide.gt-md>
+            <mat-icon class="secondary-text">cancel</mat-icon>
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="navbar-scroll-container" [ngClass]="vimboConfig.layout.navbar.primaryBackground"
+     vimboPerfectScrollbar [vimboPerfectScrollbarOptions]="{suppressScrollX: true}">
+
+    <div class="user compact-vimbo" fxLayout="column" [ngClass]="vimboConfig.layout.navbar.secondaryBackground">
+
+        <div class="h3 username">{{user?.sobrenome ? user?.nome + ' ' + user?.sobrenome : user?.nome}}</div>
+        <!--<div class="h5 email hint-text mt-8">glauber@vimbo.com.br</div>-->
+        <div class="avatar-container compact-vimbo" [ngClass]="vimboConfig.layout.navbar.primaryBackground">
+
+            <mat-icon class="edit-profile logout is-danger" (click)="logout()">power_settings_new</mat-icon>
+
+            <!--<i class="gf-vimbo gf-vimbo-icon-Pen-5 edit-profile is-success"></i>-->
+            <ng-container *ngIf="canEditProfile">
+                <i class="icon ion-md-create edit-profile is-success"
+                   (click)="editProfile('/apps/general-settings/profile')">
+                </i>
+            </ng-container>
+            <!--<mat-icon class="is-success edit-profile">edit</mat-icon>-->
+
+            <img class="avatar" src="{{ user?.foto?user.foto:'assets/images/avatars/profile.jpg' }}">
+        </div>
+    </div>
+
+    <div class="navbar-content">
+        <vimbo-navigation class="material2" layout="vertical"></vimbo-navigation>
+    </div>
+
+</div>

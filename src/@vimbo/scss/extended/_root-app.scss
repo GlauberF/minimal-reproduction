@@ -1,0 +1,112 @@
+// ------------------------------------------------------------------- //
+// Default SCSS for CRUDs scss root file
+// This scss can only be extended (@extend) because it uses the markup
+// placeholder-selectors (%)
+//
+// OBS: it only compiles when called through the selector in another scss file
+// ------------------------------------------------------------------- //
+
+%root-app {
+    width: 100%;
+
+    .center {
+        .header {
+            .title-container {
+                width: 274px;
+                height: 77px;
+                padding: 0 24px 0 24px !important;
+                margin-left: -274px;
+
+                &.isFolded {
+                    margin-left: -70px !important;
+                }
+
+                .logo {
+                    padding-top: 13px !important;
+
+                    .logo-icon {
+                        padding: 0px !important;
+                        margin: 0 16px 0 0;
+                        font-size: 25px !important;
+                        width: 20px !important;
+                        height: 20px !important;
+                        min-width: 20px !important;
+                        min-height: 20px !important;
+                        line-height: 6px !important;
+                    }
+
+                    .logo-text {
+                        font-size: 24px;
+                        line-height: 24px;
+                    }
+                }
+
+                .account {
+                    width: 100%;
+                }
+
+                .btn-back {
+                    //margin-left: -27px;
+                    margin-left: -8px;
+                }
+
+                .logo-text {
+                    //font-size: 16px !important;
+                    line-height: normal !important;
+                    font-size: 14px !important;
+                    font-weight: 600;
+                    font-family: sans-serif;
+                }
+            }
+        }
+
+        .content-card {
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+
+            .toolbar {
+                .toolbar-separator {
+                    height: 32px;
+                    width: 1px;
+                    margin: 0 12px;
+                }
+            }
+        }
+    }
+
+    .search-fake {
+        width: 100%;
+        height: 45px;
+        border-radius: 8px;
+        //background-color: #4eaaf3
+        background-color: #1da5e8;
+    }
+
+    // As it is only hidden when the skeleton is active, so it starts with display block.
+    .if-active-skeleton-hide {
+        display: block;
+    }
+    // As it only appears when skeleton is active, so it starts with display none
+    .if-active-skeleton-show {
+        display: none;
+    }
+
+    // Main class indicating skeleton should be shown
+    .active-skeleton {
+        cursor: not-allowed;
+        pointer-events: none;
+        color: gray;
+
+        .if-active-skeleton-hide {
+            display: none !important;
+        }
+
+        .if-active-skeleton-show {
+            display: block !important;
+        }
+
+        button {
+            background-color: rgba(0, 0, 0, 0.12) !important;
+        }
+    }
+}

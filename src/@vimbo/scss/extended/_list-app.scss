@@ -1,0 +1,19 @@
+// ------------------------------------------------------------------- //
+// Default SCSS for CRUDs scss list file
+// This scss can only be extended (@extend) because it uses the markup
+// placeholder-selectors (%)
+//
+// OBS: it only compiles when called through the selector in another scss file
+// ------------------------------------------------------------------- //
+
+%list-app {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    border-right: 1px solid;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-right-color: transparent;
+}

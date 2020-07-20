@@ -1,0 +1,76 @@
+<div id="login" class="inner-scroll" fxLayout="row" fxLayoutAlign="start">
+
+    <div id="login-intro" fxFlex fxHide fxShow.gt-xs>
+    </div>
+
+    <div id="login-form-wrapper" vimboPerfectScrollbar
+         [@animate]="{value:'*',params:{delay:'300ms',x:'100%'}}">
+
+        <div id="login-form">
+
+            <div class="title" transl>Entrar</div>
+
+            <form name="loginForm" [formGroup]="loginForm" novalidate>
+
+                <!--Status message -->
+                <vimbo-message-boxes
+                    *ngIf="statusMessage"
+                     [type]="statusMessage?.status"
+                     [message]="statusMessage?.text"
+                     [hideButtonClose]="true">
+                </vimbo-message-boxes>
+
+                <!-- Fields -->
+                <div fxLayout="column">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="usu_email">
+                        <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+                    </mat-form-field>
+                    <vimbo-error-message-formcontrol
+                        [control]="loginForm.get('usu_email')"
+                        label="{{'Email'}}"
+                        hideButtonClose="true">
+                    </vimbo-error-message-formcontrol>
+                </div>
+
+                <div fxLayout="column">
+                    <mat-form-field appearance="outline">
+                        <mat-label><span transl>Senha</span></mat-label>
+                        <input matInput type="password" formControlName="usu_senha">
+                        <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+                    </mat-form-field>
+                    <vimbo-error-message-formcontrol
+                        [control]="loginForm.get('usu_senha')"
+                        label="{{'Senha' | translate}}"
+                        hideButtonClose="true">
+                    </vimbo-error-message-formcontrol>
+                </div>
+                <!-- // Fields -->
+
+                <!-- Submit -->
+                <button
+                    *ngIf="!callInProgress"
+                    mat-raised-button
+                    color="accent"
+                    (click)="logIn()"
+                    class="submit-button"
+                    aria-label="LOGIN"
+                    [disabled]="loginForm.invalid">
+                    <span transl>Entrar</span>
+                </button>
+
+                <!-- Progress -->
+                <mat-progress-spinner
+                    *ngIf="callInProgress"
+                    class="vimbo-progress"
+                    [color]="'accent'"
+                    [mode]="'indeterminate'"
+                    [diameter]="20">
+                </mat-progress-spinner>
+
+            </form>
+
+        </div>
+    </div>
+</div>

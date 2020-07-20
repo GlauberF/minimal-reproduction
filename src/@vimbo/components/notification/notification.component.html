@@ -1,0 +1,34 @@
+<div class="animated animatedFade vimbo-notification"
+     [style.background-color]="background"
+     [style.color]="color"
+     fxLayout="column" fxLayoutAlign="start center" fxFlex
+     [ngClass]="visiblityState">
+
+<!--    <div fxFlexLayout="column" style="width: 100%;">-->
+
+        <!-- BUTTON CLOSE -->
+        <ng-container *ngIf="!hiddenClose">
+            <div class="row_fechar">
+                <button class="fechar-notification" aria-label="fechar" (click)="close()">
+                    <i class="icon ion-ios-close" [style.color]="color"></i>
+                </button>
+            </div>
+        </ng-container>
+
+
+        <!-- TEXT ( STRING | HTML ) -->
+        <div class="text-center">
+            <div [innerHtml]="message | noSanitize"></div>
+        </div>
+
+        <!-- BUTTONS CONFIRM -->
+        <div *ngIf="showButtonConfirm" class="text-center mt-8">
+            <button *ngIf="buttonType === 'basic'" (click)="confirm()" mat-raised-button>{{textButton}}</button>
+            <button *ngIf="buttonType === 'primary' || buttonType === 'accent' || buttonType === 'warn'"
+                    (click)="confirm()" mat-raised-button color="{{buttonType}}">{{textButton}}</button>
+            <a *ngIf="buttonType === 'link'" (click)="confirm()" mat-raised-button routerLink=".">{{textButton}}</a>
+        </div>
+
+<!--    </div>-->
+
+</div>

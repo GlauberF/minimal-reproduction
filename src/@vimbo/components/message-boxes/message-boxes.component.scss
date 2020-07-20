@@ -1,0 +1,199 @@
+vimbo-message-boxes {
+    width: 100%;
+    border-radius: 4px !important;
+
+    .vimbo-message-boxes {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        padding: 1rem 2rem 1rem 1rem;
+        position: relative;
+        width: 100%;
+
+        .delete {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background-color: rgba(10, 10, 10, 0.2);
+            border: none;
+            border-radius: 290486px;
+            cursor: pointer;
+            pointer-events: auto;
+            display: inline-block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-size: 0;
+            height: 20px;
+            max-height: 20px;
+            max-width: 20px;
+            min-height: 20px;
+            min-width: 20px;
+            outline: 0;
+            position: absolute;
+            vertical-align: top;
+            width: 20px;
+            right: 0.5rem;
+            top: 0.5rem;
+
+            i,
+            mat-icon {
+                padding-bottom: 44px !important;
+                display: block !important;
+                left: -10% !important;
+                position: absolute !important;
+                top: -12% !important;
+            }
+        }
+        > a {
+            text-decoration: none !important;
+        }
+    }
+
+    &.is-danger {
+        .vimbo-message-boxes {
+            background-color: #ff3860;
+
+            i,
+            mat-icon,
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+    &.is-primary {
+        .vimbo-message-boxes {
+            background-color: #00d1b2;
+
+            i,
+            mat-icon,
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+    &.is-link {
+        .vimbo-message-boxes {
+            background-color: #3273dc;
+
+            i,
+            mat-icon,
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+    &.is-info {
+        .vimbo-message-boxes {
+            background-color: #209cee;
+
+            i,
+            mat-icon,
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+    &.is-info-light {
+        .vimbo-message-boxes {
+            background-color: #f0f8ff;
+
+            i,
+            mat-icon,
+            span {
+                color: #039be5 !important;
+            }
+        }
+    }
+
+    &.is-success {
+        .vimbo-message-boxes {
+            background-color: #23d160;
+
+            i,
+            mat-icon,
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+    &.is-warning {
+        .vimbo-message-boxes {
+            background-color: #ffdd57;
+
+            i,
+            mat-icon,
+            span {
+                color: rgba(0, 0, 0, 0.7) !important;
+            }
+        }
+    }
+
+    &.text-only {
+        .vimbo-message-boxes {
+            background-color: transparent;
+        }
+    }
+
+    &.text-only-success {
+        .vimbo-message-boxes {
+            background-color: transparent;
+
+            i,
+            mat-icon,
+            span {
+                color: #23d160 !important;
+            }
+        }
+    }
+
+    &.text-only-info {
+        .vimbo-message-boxes {
+            background-color: transparent;
+
+            i,
+            mat-icon,
+            span {
+                color: #209cee !important;
+            }
+        }
+    }
+
+    &.text-only-link {
+        .vimbo-message-boxes {
+            background-color: transparent;
+
+            i,
+            mat-icon,
+            span {
+                color: #3273dc !important;
+            }
+        }
+    }
+
+    &.text-only-warning {
+        .vimbo-message-boxes {
+            background-color: transparent;
+
+            i,
+            mat-icon,
+            span {
+                color: #ffdd57 !important;
+            }
+        }
+    }
+
+    &.text-only-danger {
+        .vimbo-message-boxes {
+            background-color: transparent;
+
+            i,
+            mat-icon,
+            span {
+                color: #ff3860 !important;
+            }
+        }
+    }
+}

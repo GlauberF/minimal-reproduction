@@ -1,0 +1,88 @@
+@import 'src/@vimbo/scss/vimbo';
+
+:host {
+    .vimbo-search-bar {
+        display: flex;
+        flex: 0 1 auto;
+        min-width: 64px;
+        height: 64px;
+        font-size: 13px;
+
+        @include media-breakpoint('xs') {
+            height: 56px;
+        }
+
+        .vimbo-search-bar-content {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+            justify-content: flex-start;
+
+            .vimbo-search-bar-expander,
+            .vimbo-search-bar-collapser {
+                cursor: pointer;
+                padding: 0 20px;
+                margin: 0;
+                width: 64px !important;
+                height: 64px !important;
+                line-height: 64px !important;
+
+                @include media-breakpoint('xs') {
+                    height: 56px !important;
+                    line-height: 56px !important;
+                }
+            }
+
+            .vimbo-search-bar-loader {
+                width: 64px !important;
+                height: 64px !important;
+                line-height: 64px !important;
+
+                @include media-breakpoint('xs') {
+                    height: 56px !important;
+                    line-height: 56px !important;
+                }
+            }
+
+            .vimbo-search-bar-collapser {
+                display: none;
+            }
+
+            #vimbo-search-bar-input {
+                display: none;
+                flex: 1 0 auto;
+                min-height: 64px;
+                font-size: 16px;
+                background-color: transparent;
+                color: currentColor;
+            }
+        }
+
+        &.expanded {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+
+            .vimbo-search-bar-content {
+                #vimbo-search-bar-input {
+                    display: flex;
+                }
+
+                .vimbo-search-bar-collapser {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    body {
+        &.vimbo-search-bar-expanded {
+            #toolbar {
+                z-index: 999 !important;
+            }
+        }
+    }
+}

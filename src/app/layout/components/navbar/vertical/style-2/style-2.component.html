@@ -1,0 +1,23 @@
+<div class="navbar-header" [ngClass]="vimboConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo">
+        <img class="logo-icon" src="assets/images/logos/vimbo.svg">
+        <span class="logo-text">vimbo</span>
+    </div>
+
+    <button mat-icon-button class="toggle-sidebar-folded"
+            (click)="toggleSidebarFolded()" fxHide.lt-lg>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-icon-button class="toggle-sidebar-opened"
+            (click)="toggleSidebarOpened()" fxHide.gt-md>
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+</div>
+
+<div class="navbar-content" vimboPerfectScrollbar [vimboPerfectScrollbarOptions]="{suppressScrollX: true}"
+     [ngClass]="vimboConfig.layout.navbar.primaryBackground">
+    <vimbo-navigation layout="vertical"></vimbo-navigation>
+</div>

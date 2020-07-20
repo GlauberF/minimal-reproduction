@@ -1,0 +1,83 @@
+<div fxLayout="column" fxFlex vimboPerfectScrollbar>
+
+    <div fxLayout="row" fxFlex="100%" fxLayoutAlign="space-evenly center" class="light-blue-600 header-title">
+        <mat-list fxFlex="70%">
+            <h3 matSubheader>
+                <span transl class="vimbo-white-fg">Acesso rápido</span>
+            </h3>
+        </mat-list>
+        <div fxFlex="30%">
+            <div fxLayout="row" fxFlex="100%" fxLayoutAlign="space-evenly center">
+                <mat-icon fxFlex="50%" class="s-22 cursor-pointer close" (click)="toggleSidebarOpen('quickPanel')">cancel</mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <!--cdkFocusRegionStart-->
+    <mat-list class="date light-blue-600">
+        <!--<h3 matSubheader cdkFocusInit>
+            <span transl>Today</span>
+        </h3>-->
+        <div class="secondary-text pl-16 pr-16">
+            <div class="font-size-18">
+                {{date | date:'EEEE' | capitalize:{delimiter: '-'} }},
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start start" class="font-size-18">
+                <span class="mr-4"> {{date | date:'d'}}</span>
+                <span class="mr-4" transl>de</span>
+                <span class="mr-4"> {{date | date:'MMMM' | truncate:['3', ''] | capitalize }}</span>
+                <span class="mr-4" transl>de</span>
+                <span> {{date | date:'y'}}</span>
+                <!--<span> {{date | date:'HH:mm'}}</span>-->
+            </div>
+        </div>
+    </mat-list>
+
+    <!--<mat-divider cdkFocusRegionEnd></mat-divider>-->
+    <mat-divider></mat-divider>
+
+    <mat-list>
+
+        <!--  class="disabled" -->
+        <mat-list-item (click)="go('/apps/general-settings/company-customer-data')">
+            <span class="font-weight-700"> {{'Dados do Cliente' | translate}} </span>
+            <span class="font-size-14"> {{'Gerencie aqui os seus dados de cliente' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go('/apps/general-settings/user-business')">
+            <span class="font-weight-700"> {{'Usúarios' | translate}} </span>
+            <span class="font-size-14"> {{'Gerencie aqui os usúarios do sistema' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go('/apps/general-settings/my-accountant')">
+            <span class="font-weight-700"> {{'Meu Contador' | translate}} </span>
+            <span class="font-size-14"> {{'Víncule um contador, para automatizar os processos da sua empresa' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go('/apps/general-settings/digital-certificate')">
+            <span class="font-weight-700"> {{'Upload Certificado' | translate}} </span>
+            <span class="font-size-14"> {{'Gerenciar / Enviar certificado A1' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go('/apps/general-settings')">
+            <span class="font-weight-700"> {{'Configurações Gerais' | translate}} </span>
+            <span class="font-size-14"> {{'Gerencie as demais configurações aqui' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go('/apps/system-tools')">
+            <span class="font-weight-700"> {{'Ferramentas' | translate}} </span>
+            <span class="font-size-14"> {{'Ferramentas do sistema, importação, backup etc ...' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go(null)" class="disabled">
+            <span class="font-weight-700"> {{'Auditoria do Sistema' | translate}} </span>
+            <span class="font-size-14"> {{'Aqui você encontra todas as operações dos usuários, nos módulos principal, exemplo registros criados, deletados...' | translate}} </span>
+        </mat-list-item>
+
+        <mat-list-item (click)="go('/apps/audit/audit-email/all')">
+            <span class="font-weight-700"> {{'Auditoria de E-mail' | translate}} </span>
+            <span class="font-size-14"> {{'Aqui você acompanha o envio de e-mails do sistema em seu nome, exemplo envio de negociações, NF-e ...' | translate}} </span>
+        </mat-list-item>
+    </mat-list>
+
+</div>

@@ -1,0 +1,130 @@
+<!-- SIDE PANEL -->
+<ng-container *ngIf="!vimboConfig.layout.sidepanel.hidden && vimboConfig.layout.sidepanel.position === 'left'">
+
+    <!-- CHAT PANEL -->
+
+</ng-container>
+<!-- / SIDE PANEL -->
+
+<div id="main">
+
+    <!-- TOOLBAR: Above -->
+    <ng-container *ngIf="vimboConfig.layout.toolbar.position === 'above'">
+        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+    </ng-container>
+    <!-- / TOOLBAR: Above -->
+
+    <div id="container-1" class="container">
+
+        <!-- NAVBAR: Left -->
+        <ng-container *ngIf="vimboConfig.layout.navbar.position === 'left'">
+            <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
+        </ng-container>
+        <!-- / NAVBAR: Left -->
+
+        <div id="container-2" class="container">
+
+            <!-- TOOLBAR: Below fixed -->
+            <ng-container *ngIf="vimboConfig.layout.toolbar.position === 'below-fixed'">
+                <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+            </ng-container>
+            <!-- / TOOLBAR: Below fixed -->
+
+            <div id="container-3" class="container" vimboPerfectScrollbar
+                 [vimboPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+
+                <!-- TOOLBAR: Below static -->
+                <ng-container *ngIf="vimboConfig.layout.toolbar.position === 'below-static'">
+                    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+                </ng-container>
+                <!-- / TOOLBAR: Below static -->
+
+                <!-- CONTENT -->
+                <content></content>
+                <!-- / CONTENT -->
+
+                <!-- FOOTER: Below static -->
+                <ng-container *ngIf="vimboConfig.layout.footer.position === 'below-static'">
+                    <ng-container *ngTemplateOutlet="footer"></ng-container>
+                </ng-container>
+                <!-- / FOOTER: Below static -->
+
+            </div>
+
+            <!-- FOOTER: Below fixed -->
+            <ng-container *ngIf="vimboConfig.layout.footer.position === 'below-fixed'">
+                <ng-container *ngTemplateOutlet="footer"></ng-container>
+            </ng-container>
+            <!-- / FOOTER: Below fixed -->
+
+        </div>
+
+        <!-- NAVBAR: Right -->
+        <ng-container *ngIf="vimboConfig.layout.navbar.position === 'right'">
+            <ng-container *ngTemplateOutlet="rightNavbar"></ng-container>
+        </ng-container>
+        <!-- / NAVBAR: Right -->
+
+    </div>
+
+    <!-- FOOTER: Above -->
+    <ng-container *ngIf="vimboConfig.layout.footer.position === 'above'">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </ng-container>
+    <!-- FOOTER: Above -->
+
+</div>
+
+<!-- SIDE PANEL -->
+<ng-container *ngIf="!vimboConfig.layout.sidepanel.hidden && vimboConfig.layout.sidepanel.position === 'right'">
+    <!-- CHAT PANEL -->
+</ng-container>
+<!-- / SIDE PANEL -->
+
+<!-- QUICK PANEL -->
+<vimbo-sidebar name="quickPanel" position="right" class="quick-panel" [invisibleOverlay]="true">
+    <quick-panel></quick-panel>
+</vimbo-sidebar>
+<!-- / QUICK PANEL -->
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- @ PARTIALS                                                                                            -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<!-- TOOLBAR -->
+<ng-template #toolbar>
+    <toolbar *ngIf="!vimboConfig.layout.toolbar.hidden"
+             [ngClass]="vimboConfig.layout.toolbar.customBackgroundColor === true ? vimboConfig.layout.toolbar.position + ' ' + vimboConfig.layout.toolbar.background : vimboConfig.layout.toolbar.position">
+    </toolbar>
+</ng-template>
+<!-- / TOOLBAR -->
+
+<!-- FOOTER -->
+<ng-template #footer>
+    <footer *ngIf="!vimboConfig.layout.footer.hidden"
+            [ngClass]="vimboConfig.layout.footer.customBackgroundColor === true ? vimboConfig.layout.footer.position + ' ' + vimboConfig.layout.footer.background : vimboConfig.layout.footer.position">
+    </footer>
+</ng-template>
+<!-- / FOOTER -->
+
+<!-- LEFT NAVBAR -->
+<ng-template #leftNavbar>
+    <vimbo-sidebar name="navbar" class="navbar-vimbo-sidebar"
+                  [folded]="vimboConfig.layout.navbar.folded"
+                  lockedOpen="gt-md"
+                  *ngIf="!vimboConfig.layout.navbar.hidden">
+        <navbar [variant]="vimboConfig.layout.navbar.variant" class="left-navbar"></navbar>
+    </vimbo-sidebar>
+</ng-template>
+<!-- / LEFT NAVBAR -->
+
+<!-- RIGHT NAVBAR -->
+<ng-template #rightNavbar>
+    <vimbo-sidebar name="navbar" position="right" class="navbar-vimbo-sidebar"
+                  [folded]="vimboConfig.layout.navbar.folded"
+                  lockedOpen="gt-md"
+                  *ngIf="!vimboConfig.layout.navbar.hidden">
+        <navbar [variant]="vimboConfig.layout.navbar.variant" class="right-navbar"></navbar>
+    </vimbo-sidebar>
+</ng-template>
+<!-- / RIGHT NAVBAR -->

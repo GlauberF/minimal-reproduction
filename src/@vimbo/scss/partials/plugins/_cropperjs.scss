@@ -1,0 +1,21 @@
+/*!
+ * @description
+ *
+ * @author  Glauber Funez <glauber@vimbo.com.br>
+ * @package Vimbo
+ * @Copyright (c) 2019 Vimbo Tecnologia LTDA ME
+ * @link     https://www.vimbo.com.br/
+ * 22/10/2019 15:03
+ */
+
+.vimbo-cropper-box {
+    .cropper-view-box,
+    .cropper-face {
+        border-radius: 50% !important;
+    }
+
+    /* Limit image width to avoid overflow the container */
+    img {
+        max-width: 100% !important; /* This rule is very important, please do not ignore this! */
+    }
+}

@@ -1,0 +1,22 @@
+<div class="vimbo-message-boxes">
+    <!-- with url -->
+    <ng-container *ngIf="url">
+        <a [href]=url>
+            <button class='delete' *ngIf="!hideButtonClose">
+                <i class="icon ion-ios-close" (click)="close()"></i>
+            </button>
+            <span class='pr-10' transl [innerHTML]="message | noSanitize"></span>
+        </a>
+    </ng-container>
+    <!-- // with url -->
+    <!-- without url -->
+    <ng-container *ngIf="!url">
+        <div>
+            <button class='delete' *ngIf="!hideButtonClose">
+                <i class="icon ion-ios-close" (click)="close()"></i>
+            </button>
+            <span class='pr-10' transl [innerHTML]="message | noSanitize"></span>
+        </div>
+    </ng-container>
+    <!-- // without url -->
+</div>

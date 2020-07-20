@@ -1,0 +1,9 @@
+@mixin vimbo-search-bar-theme($theme) {
+    $background: map-get($theme, background);
+
+    .vimbo-search-bar {
+        &.expanded {
+            background-color: map-get($background, background);
+        }
+    }
+}

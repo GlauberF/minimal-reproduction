@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------------------------------
+// Variables extra
+// -----------------------------------------------------------------------------------------------------
+
+// shadow padrão
+$vimbo-box-shadow: rgba(10, 40, 123, 0.02) 0px 0px 3px 3px,
+    rgba(10, 40, 123, 0.11) 0px 10px 56px !important;
+$vimbo-box-shadow-without-major: rgba(10, 40, 123, 0.02) 0px 0px 3px 3px,
+    rgba(10, 40, 123, 0.11) 0px 10px 56px;
+
+$mat-elevation-vimbo: $vimbo-box-shadow;
+
+// Navs
+$vimbo-nav-bg: #e8f0fe;
+$vimbo-nav-fg: #1a73e8;

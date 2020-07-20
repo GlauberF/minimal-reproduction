@@ -1,0 +1,40 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2018", "dom"],
+        "strictNullChecks": false,
+        "strict": false,
+        "paths": {
+            // core
+            "@vimbo": ["@vimbo/"],
+            "@vimboConf/*": ["app/vimbo-config/*"],
+            "@env/*": ["environments/*"],
+            "@guards/*": ["app/guards/*"],
+            "@nav/*": ["app/navigation/*"],
+            "@layoutComponent/*": ["app/layout/components/*"],
+            // default extended
+            "@apps/*": ["app/main/apps/*"],
+            "@pages/*": ["app/main/pages/*"],
+            // Libs
+            "moment": ["../node_modules/moment/min/"],
+            "lodash": ["./proxies/lodash-es.ts"],
+            "crypto-js": ["./proxies/crypto-js.ts"]
+        }
+    },
+    "exclude": ["@schematics/", "**/@schematics/**"],
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": true,
+        "strictInjectionParameters": true
+    }
+}

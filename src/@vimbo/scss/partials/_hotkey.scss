@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Theming
+// -----------------------------------------------------------------------------------------------------
+@mixin hotkey-theme($theme) {
+    $foreground: map-get($theme, foreground);
+
+    .hotkey {
+        .label {
+            color: map-get($foreground, hint-text);
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            vertical-align: super;
+            margin: 0 5px 0 5px;
+        }
+    }
+}

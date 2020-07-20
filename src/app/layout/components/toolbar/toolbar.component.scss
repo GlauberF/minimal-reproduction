@@ -1,0 +1,135 @@
+@import 'src/@vimbo/scss/vimbo';
+
+.enable-draggable {
+    -webkit-app-region: drag !important;
+}
+.disabled-draggable {
+    -webkit-app-region: none !important;
+}
+
+toolbar {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    z-index: 4;
+    -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04),
+        0 1px 6px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+
+    &.below {
+        z-index: 2;
+    }
+
+    .mat-toolbar {
+        position: relative;
+        background: inherit !important;
+        color: inherit !important;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        .logo-icon {
+            width: 38px;
+        }
+    }
+
+    .mr-10 {
+        margin-right: 10px !important;
+    }
+    .mr-14 {
+        margin-right: 14px !important;
+    }
+    .ml-10 {
+        margin-left: 10px !important;
+    }
+
+    .mt-icon {
+        //font-size: 24px;
+        //line-height: 24px;
+    }
+
+    i,
+    mat-icon {
+        //margin-bottom: 7px;
+    }
+
+    .user-button,
+    vimbo-search-bar,
+    .language-button,
+    .chat-panel-toggle-button,
+    .quick-panel-toggle-button {
+        min-width: 64px;
+        height: 64px;
+
+        @include media-breakpoint('xs') {
+            height: 56px;
+        }
+    }
+
+    .navbar-button {
+        min-width: 45px;
+        height: 34px;
+        color: inherit;
+        background: transparent;
+        -webkit-tap-highlight-color: transparent;
+        //padding: 0 16px;
+        border-radius: 4px;
+        overflow: visible;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        outline: 0;
+        border: none;
+        max-width: 45px;
+        padding: 0;
+        &:hover {
+            background: #ffffff1a !important;
+        }
+
+        .minimize {
+            margin-bottom: 24px;
+        }
+    }
+
+    .navbar-button-swap-accounts {
+        min-width: 45px;
+        height: 34px;
+        color: inherit;
+        background: #ffffff1a !important;
+        border-radius: 4px;
+        overflow: visible;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        outline: 0;
+        border: none;
+        padding: 2px 2px 2px 4px !important;
+        margin-left: 24px;
+        &.cursor-auto {
+            cursor: auto !important;
+        }
+
+        @include media-breakpoint('xs') {
+            margin-left: 0px;
+        }
+    }
+
+    .btn_menu_active {
+        background: #ffffff1a !important;
+    }
+
+    .toolbar-separator {
+        height: 64px;
+        width: 1px;
+
+        @include media-breakpoint('xs') {
+            height: 56px;
+        }
+    }
+}

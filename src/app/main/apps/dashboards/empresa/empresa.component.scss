@@ -1,0 +1,40 @@
+@import 'src/@vimbo/scss/vimbo';
+
+#dashboard-empresa {
+    .header {
+        flex-direction: column !important;
+        flex: 1 0 auto;
+        //height: 200px;
+        height: 78px;
+        max-height: 78px;
+        width: 100%;
+
+        .logo-text {
+            //line-height: normal !important;
+            font-size: 14px !important;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .card-welcome {
+            width: calc(100% - 48px);
+            margin-left: 24px;
+            height: 150px;
+            background: white;
+            border-radius: 8px;
+            margin-top: 0;
+            padding: 24px;
+
+            img {
+                position: absolute;
+                margin-top: -70px;
+                right: 18px;
+            }
+        }
+
+        @include media-breakpoint('xs') {
+            height: 240px;
+            padding: 16px;
+        }
+    }
+}

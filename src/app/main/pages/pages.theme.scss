@@ -1,0 +1,7 @@
+// Import page component themes here to enable theming for them
+@import 'src/app/main/pages/authentication/login/login.theme';
+
+// Define a mixin for easier access
+@mixin pages-theme($theme) {
+    @include login-theme($theme);
+}

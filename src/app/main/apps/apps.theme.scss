@@ -1,0 +1,7 @@
+// Import app component themes here to enable theming for them
+@import 'src/app/main/apps/dashboards/empresa/empresa.theme';
+
+// Define a mixin for easier access
+@mixin apps-theme($theme) {
+    @include dashboards-empresa-theme($theme);
+}

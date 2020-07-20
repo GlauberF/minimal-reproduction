@@ -1,0 +1,21 @@
+<!-- PROGRESS BAR -->
+<vimbo-progress-bar></vimbo-progress-bar>
+<!-- / PROGRESS BAR -->
+
+<!-- VERTICAL LAYOUT 1 -->
+<ng-container *ngIf="vimboConfig && vimboConfig.layout.style === 'vertical-layout-1'">
+    <vertical-layout-1></vertical-layout-1>
+</ng-container>
+<!-- / VERTICAL LAYOUT 1 -->
+
+<!-- DEFAULT VIMBO | VERTICAL LAYOUT 1 -->
+<ng-template *ngIf="!vimboConfig">
+    <vertical-layout-1></vertical-layout-1>
+</ng-template>
+
+<!-- Keyboard shortcuts -->
+<ng-container *ngIf="vimboConfig">
+    <hotkeys-cheatsheet [title]="titleKeyboardShortcuts">
+    </hotkeys-cheatsheet>
+</ng-container>
+<!-- / Keyboard shortcuts -->

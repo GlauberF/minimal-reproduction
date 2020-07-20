@@ -1,0 +1,9 @@
+<ng-container *ngIf="_components">
+    <ng-container *ngFor="let component of _components; trackBy: ( '_id' | trackByVimbo )">
+        <ng-template
+            [lazyComp]="component.cpn | async"
+            [inputs]="component.inputs"
+            [outputs]="component.outputs">
+        </ng-template>
+    </ng-container>
+</ng-container>

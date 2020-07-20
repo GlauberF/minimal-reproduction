@@ -1,0 +1,19 @@
+@import 'src/@vimbo/scss/vimbo';
+
+vimbo-navigation {
+    display: flex;
+    flex: 1 0 auto;
+
+    > .nav {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .nav {
+            padding-top: 10px !important;
+        }
+    }
+}

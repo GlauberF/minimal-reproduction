@@ -1,0 +1,29 @@
+<h1 matDialogTitle fxLayout="row" fxLayoutAlign="center center" class="text-center">
+    <div [innerHtml]="titleMessage | noSanitize" class="font-size-16"></div>
+</h1>
+
+<div mat-dialog-content fxLayout="row" fxLayoutAlign="center center" class="text-center"
+     [ngStyle.lg]="{'min-width': '45vw'}">
+
+    <div id="modalContent" [innerHtml]="confirmMessage | noSanitize"></div>
+</div>
+
+<ng-container *ngIf="!hiddenButtons">
+    <div mat-dialog-actions class="pt-24" style="float: right;">
+
+        <ng-container *ngIf="!buttonClose.hidden">
+            <button mat-button (click)="dialogRef.close(false)">
+                {{buttonClose.label}}
+                <span class="hotkey">
+                    <span class="label">esc</span>
+                </span>
+            </button>
+        </ng-container>
+
+        <ng-container *ngIf="!buttonConfirm.hidden">
+            <button mat-raised-button class="mat-accent mr-16" (click)="dialogRef.close(true)">{{buttonConfirm.label}}</button>
+        </ng-container>
+
+    </div>
+</ng-container>
+

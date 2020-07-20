@@ -1,0 +1,9 @@
+// Import vimbo core library
+@import '@vimbo/scss/core';
+
+// Import app.theme.scss
+@import 'app/app.theme';
+
+//ionicons
+$ionicons-font-path: '~ionicons/dist/fonts';
+@import '~ionicons/dist/scss/ionicons.scss';

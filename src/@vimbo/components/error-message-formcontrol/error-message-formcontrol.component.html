@@ -1,0 +1,7 @@
+<div *ngIf="errorMessage != null" class="vimbo-error-message-formcontrol">
+    <!-- only text -->
+    <p *ngIf="textOnly" class="warn-fg" [ngStyle]="{'padding-left': '10px', 'margin-bottom': '-5px'}">{{ errorMessage }}</p>
+    <!-- boxe -->
+    <vimbo-message-boxes *ngIf="!textOnly" type="danger" message="{{ errorMessage }}" hideButtonClose="hideButtonClose">
+    </vimbo-message-boxes>
+</div>

@@ -1,0 +1,42 @@
+<div class="nav" [ngClass]="{'horizontal':layout === 'horizontal', 'vertical':layout === 'vertical'}">
+
+    <!-- Vertical Navigation Layout -->
+    <ng-container *ngIf="layout === 'vertical'">
+
+        <ng-container *ngFor="let item of navigation">
+            <vimbo-nav-vertical-group *ngIf="item.type=='group'" [item]="item"></vimbo-nav-vertical-group>
+            <vimbo-nav-vertical-collapsable *ngIf="item.type=='collapsable'"
+                                           [item]="item"></vimbo-nav-vertical-collapsable>
+            <vimbo-nav-vertical-item *ngIf="item.type=='item'" [item]="item"></vimbo-nav-vertical-item>
+        </ng-container>
+
+        <ng-container *ngIf="!navigation.length">
+            <!--  #e8f0fe-->
+            <div><br></div>
+            <ngx-skeleton-loader
+                [ngStyle]="{'margin-top':'20px'}"
+                count="1"
+                [theme]="{
+                    'border-radius': '0 8px 8px 0',
+                    'background-color': '#f5f5f5',
+                     width: '35%',
+                     height: '25px',
+                    'margin-bottom': '2px'
+                }">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader
+                count="8"
+                [theme]="{
+                    'border-radius': '0 20px 20px 0',
+                    'background-color': '#f5f5f5',
+                     width: '95%',
+                     height: '40px',
+                    'margin-bottom': '2px'
+                }">
+            </ngx-skeleton-loader>
+        </ng-container>
+
+    </ng-container>
+    <!-- / Vertical Navigation Layout -->
+
+</div>

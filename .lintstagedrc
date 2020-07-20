@@ -1,0 +1,6 @@
+{
+    "**/*.{ts,js,json,css,scss}": [
+        "./node_modules/.bin/prettier '**/*.{ts,js,json,css,scss}' --write",
+        "git add"
+    ]
+}

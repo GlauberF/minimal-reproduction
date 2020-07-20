@@ -1,0 +1,100 @@
+// ------------------------------------------------------------------- //
+// Mat Form
+// This scss can only be extended (@extend) because it uses the markup
+// placeholder-selectors (%)
+//
+// OBS: it only compiles when called through the selector in another scss file
+// ------------------------------------------------------------------- //
+
+%mat-form-ext {
+    .mat-form-field-appearance-outline {
+        // Fix field height, standard vimbo
+        height: 55px !important;
+
+        // Standard vimbo
+        .mat-form-field-wrapper {
+            // Formly
+            max-height: 50px !important;
+
+            .mat-form-field-flex {
+                .mat-form-field-infix {
+                    padding: 0.4em 0 !important;
+
+                    .mat-form-field-label-wrapper {
+                        top: -1.5em !important;
+                    }
+                }
+
+                // Fix Prefix and Suffix
+                .mat-form-field-prefix {
+                    top: -4px;
+                }
+                .mat-form-field-suffix {
+                    top: -4px;
+                }
+            }
+
+            // Fix
+            .mat-form-field-subscript-wrapper {
+                top: auto;
+                margin-top: 3px;
+            }
+        }
+
+        // label
+        &.mat-form-field-can-float.mat-form-field-should-float {
+            .mat-form-field-wrapper {
+                .mat-form-field-flex {
+                    .mat-form-field-infix {
+                        .mat-form-field-label-wrapper {
+                            .mat-form-field-label {
+                                transform: translateY(-1.1em) scale(0.75) !important;
+                                width: 133.33333% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Checkbox
+        &.mat-form-field-type-checkbox {
+            .mat-form-field-wrapper {
+                .mat-form-field-flex {
+                    .mat-form-field-infix {
+                        padding: 2px 0 4px 0 !important;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+
+        // Error
+        &.mat-form-field-invalid {
+            .mat-form-field-wrapper {
+                max-height: 44px !important;
+            }
+            .mat-form-field-subscript-wrapper {
+                background: #f44336 !important;
+                color: white !important;
+                border-bottom-left-radius: 4px !important;
+                border-bottom-right-radius: 4px !important;
+                //fix, position error message in textarea
+                margin-top: -3px;
+                top: auto;
+                z-index: 1;
+
+                .mat-error {
+                    height: 16px !important;
+                    padding-top: 2px !important;
+                    color: white !important;
+                    // Fix, text-truncate
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
